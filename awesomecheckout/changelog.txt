@@ -1,0 +1,156 @@
+v1.5.0
+=======
+
+* added gift info is shown in progress boxes
+* added stripe payment gateway support
+* added cybersource payment gateway support
+* added support for merging of js
+* added support for sagepay 3D secure
+* added admin configuration for using a two step Shipping process
+* added admin configuration to turn off zip code autocomplete
+* added admin configuration to disable shipping estimate
+* improved speed, stability &amp; performance
+* improved user flow when an error is reported by payment gateway
+* improved support for browser autofill extensions
+* improved selection of credit card type based on change vs. keyup event
+* improved saving of shipping address
+* improved support of Google Analytics Universal
+* improved browser side validation of shipping address
+* improved method of translation strings
+* improved telephone field so it doesn’t reload shipping methods anymore
+* fixed bug with “password cannot be empty”
+* fixed bug where errors in email addresses were being ignored
+* fixed bug where free payment method was not available option
+* fixed bug with password not being saved properly
+* fixed three php notices
+* fixed favicon bug on firefox
+* fixed bug with handling of email, password &amp; store credit(enterprise only)
+* fixed bug when shipping address was changed after reaching review step
+
+v1.4.5
+=======
+
+* enhanced Proceed to Payment interaction when shipping quotes are loading
+* major improvement to Google Analytics tracking for accurate abandonment stats
+* improved autocompletion of city/state/country with zip codes
+* improved saving of Billing Address when editing a shipping address
+* improved capturing of email address for Cart Abandonment extensions (thx Durkan Group)
+* improved IE compatibility though we don't like IE
+* respect Magento configurations for allowable countries when detecting addresses
+* fixed small bug where incorrect progress blocks were active
+* fixed small bug where credit card number would disappear on Step 2
+* fixed small bug where shipping total wouldn't update with no change in selection
+* fixed small bug where shipping method selected while editing fields above would cause shipping method to not stay selected
+* fixed bigger bug with state field validation 
+
+v1.4.4
+=======
+
+* respect Magento configuration for allowing State to be optional for certain countries
+* update shipping totals in Progress Box 3 as soon as shipping method is selected
+* enhanced UI for returning customers who choose to use a Saved Address
+* added a slight delay to doing a city/state/country lookup from zipcode to prevent firing of duplicate events
+* fixed small bug with security badges not showing for certain customers
+* fixed small bug with undefined id in shipping:postcode focus event listener
+
+v1.4.3
+=======
+
+* Fixed bugs in validations on shipping address
+* Performance Improvements
+* Fixed the bug where more than one action was needed moving to payment step
+
+
+v1.4.2
+=======
+
+* Fixed a bug whereby activating layout cache would render the checkout inoperable
+* Fixed a bug where the paypal logo was not showing in progress box 2 in some cases
+* Fixed a bug where the updated total at the end of first step was not calculated correctly for cases where user refreshes browser after moving to step 2
+* Progress box 3 – the shipping cost is no longer “0″ in case of virtual products. was not needed to state “0″
+* If the customer has no address saved, then customer’s name is now auto-filled from the account settings (if available)
+* On step 1 – the email address field does not get cleared if a guest refreshes browser.
+
+
+v1.4.1
+=======
+
+* Store credit bug fixed
+* Virtual products bug fixed
+
+
+v1.4
+=====
+
+* Virtual products support
+* Combining Step 1A and 1B
+* Estimate shipping based on location or address saved
+* Better support for handling new/existing users with ability to checkout as guest or register with the option of selecting password as well
+* Support for latest Sagepay module
+* Mobile friendly keyboard usage
+* CSS animation for highlighting changes in prices
+* Agreements modal box
+* Option to subscribe user to magento newsletter option
+* Phone number field is optional
+* Improvements in zipcode autofill
+* Design tweaks and bug fixes
+
+
+V1.3
+=====
+
+* Payment extensions support
+  * PayOne
+  * SagePay
+  * WorldPay
+  * Ogone
+  * Cybersource
+  * PSiGate
+  * Braintree
+* Improvements in Postcode ajax calls (chooses country specific pincode in multiple results)
+* Google analytics tracking - checkout steps as pageviews
+* Added whitelisting mechanism on admin side to allow JS/CSS on checkout
+* Allow logo field to be configurable on a store level
+
+v1.2.1
+======
+
+* Fixed a bug which caused order success page to show up without styling
+
+v1.2.0
+======
+
+* Responsive Design (Both Tablet & Mobile)
+* Options to add custom Header & Footer on checkout from admin
+* Options to add custom CSS/JS to override any style or specifing own JS code on checkout, all right from admin
+* Enhanced Store Credit (Enterprise Edition) & Gift functionality
+* Option to add a custom message when no shipping method is available for shipping address entered
+* Option to add custom message for Gateway errors
+* Option to add Authorize.net & Global Sign Secured badge on checkout
+* Modman file supplied to assist in installation using Modman
+* Ajax error handling
+* Fixed JS error with country dropdown
+* Theme related CSS/JS doesn't cause conflicts anymore
+* Better German translation
+
+v1.1.0
+======
+
+* Better default theme (Tons of improvements)
+* Fully translatable
+* Improved International Support for zipcode & phone fields
+* Switched to SCSS implementation for CSS
+* Keyboard support for checkout
+* Promo code javascript bug in some browsers fixed
+* Removed Twitter Bootstrap
+* A bit of Code cleanup
+
+v1.0.1
+======
+
+Bugfix: For installs that uses database prefix
+
+v1.0
+====
+
+Initial release

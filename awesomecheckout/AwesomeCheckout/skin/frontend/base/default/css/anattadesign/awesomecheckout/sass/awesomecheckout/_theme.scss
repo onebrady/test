@@ -1,0 +1,1257 @@
+
+body{
+	background: $body_background;
+	font-family:$base_font_family;
+	color: $gray;
+	@include font_shorthand($base_font_size, normal, normal);
+
+}
+
+.clearfix{
+	overflow:hidden;
+}
+
+%button{
+	cursor:pointer;
+	font-size:$base_font_size + 2;
+	padding:12px 16px;
+	-webkit-appearance: none;
+	@include border_radius(7px);
+	@include button($btn_start_color, $btn_end_color, #fff, 0 2px 0 rgba(0,0,0,.25));
+	&:hover{
+		@include button($btn_start_color_hover, $btn_end_color_hover, #fff, 0 2px 0 rgba(0,0,0,.25));
+	}
+	&:active{
+		@include button($btn_start_color, $btn_end_color, #fff, 0 2px 0 rgba(0,0,0,.25));
+		@include box_shadow(inset 0px 0px 8px 1px rgba(107, 47, 8, 1));
+
+	}
+}
+%input-common{
+	padding:5px 4px;
+	outline:none;
+	width: $input_big;
+	@include box_shadow(inset 0px 0px 3px 1px rgba(0, 0, 0, 0.1));
+	@include border_radius(0px);
+	font-size: $base_font_size - 1;
+	border:1px solid #B6B6B6;
+	line-height:19px;
+	margin-bottom:8px;
+}
+%colums-common {
+	float:left;
+	background: $left_col_background;
+	border: $border_width solid $left_col_border_color;
+	@include border_radius(5px)
+}
+
+// Awesomecheckout page layout
+// --------------------------------------------------
+
+#ac-page{
+
+	width:$fixed_width;
+	margin:0px auto;
+	overflow:hidden;
+	
+	.top-placeyourorder-btn{
+		display: none;
+		.button{
+			float:none;
+			@extend %button;
+
+		}
+	}
+
+	.show-iphone{
+		display:none;
+	}
+	
+	#header{
+		min-height:80px;
+		overflow:hidden;
+		padding-top:20px;
+		position:relative;
+	}
+	#logo{
+		float:left;
+		margin-top:15px;
+		max-width:200px
+	}
+	.my-cart{
+		float:right;
+		color: $gray;
+		background:url("images/cart-icon.gif") no-repeat 0 0px;
+		height:30px;
+		position:absolute;
+		padding: 2px 0 0 25px;
+		right:0px;
+		top:45%;
+
+	}
+
+// Awesomecheckout steps
+// --------------------------------------------------
+
+#checkoutSteps{
+	z-index:9;
+	position:relative;
+	width: $fixed_width - $right_col_width  - ($border_width + $border_width);
+	@extend %colums-common;
+	header{
+		border-bottom:$border_width solid $step_header_border_color;
+		height:45px;
+		padding:36px 0 0 38px;
+
+		span{
+			width:20px;
+			height:20px;
+			float:left;
+			text-align:center;
+			margin:3px 10px 0 0;
+			background: $step_number_background;
+			border:1px solid $step_number_border;
+			color: $step_number_text_color;
+			@include border_radius(2px);
+			@include font_shorthand(15px, bold, 19px)
+		}
+		h2{
+			color: $black;
+			@include font_shorthand(28px, bold, 28px);
+		}
+		&.same-step-header{
+			padding: 0px;
+			border: 0px;
+			padding-left: 37px;
+			height: auto;
+			background: url("images/border.gif") no-repeat 38px top;
+			padding-top: 20px;
+			span{
+				display: none;
+			}
+			h2{
+				@include font_shorthand(16px, bold, 16px);
+				display: inline;
+			}
+		}
+	}
+
+	footer{
+		height:50px;
+		overflow:hidden;
+		@include  step_padding (37px, 28px, 31px, 32px);
+		border-top:1px solid $step_header_border_color;
+
+		.button{
+			float:right;
+			@extend %button;
+
+		}
+		.required{
+			display:none;
+		}
+
+		.disabled{
+			input{
+				display:none;
+			}
+		}
+
+		&.disabled{
+			input{
+				display:none;
+			}
+		}
+
+		.please-wait{
+
+			float:right;
+
+			img{
+				position:relative;
+				top:3px;
+			}
+		}
+	}
+}
+
+// Awesomecheckout Progress bar
+// --------------------------------------------------
+
+#checkout-progress-wrapper{
+	position:relative;
+	z-index:10;
+	width: $fixed_width - $left_col_width - $col-gap;
+	float:right;
+
+	.mark{
+		display:none;
+	}
+	.mark-arrow{
+		background:url("images/mark-arrow-right-bar.png") no-repeat;
+		height:202px;
+		width:39px;
+		left:-34px;
+		top:0px;
+		position:absolute;
+		z-index:99;
+
+	}
+	.progress-block{
+		@extend %colums-common;
+		float:none;
+		min-height:181px;
+		padding:20px 15px 0 18px;
+		margin-bottom:10px;
+		opacity: 0.5;
+		filter:alpha(opacity=50);
+		position:relative;
+
+		&.active{
+			opacity: 1;
+			filter:alpha(opacity=100);
+		}
+		&.complete{
+
+			.cards{
+				margin-left:25px;
+				float:left;
+			}
+
+			.card-d{
+				float:left;
+				margin:22px 0 25px 10px;
+				width:128px;
+
+			}
+		}
+		.edit {
+			position:relative;
+
+			a{
+				color:$white;
+				position:absolute;
+				top:0px;
+				right:0px;
+				text-decoration:none;
+				text-transform:uppercase;
+				@include font_shorthand(11px, normal, 11px);
+				color:#4b91e6;
+
+			}
+		}
+	}
+
+	h2{
+		color:$black;
+		@include font_shorthand(20px, bold, 20px);
+		margin:0 0 11px	0;
+
+		&.show-iphone{
+			display:none;
+		}
+	}
+	blockquote{
+		line-height:20px;
+	}
+	address{
+		margin:0 0 5px 25px;
+		color:$gray;
+		@include font_shorthand(11px, normal, 15px);
+		padding-right:40px;
+		position:relative;
+	}
+	.cards{
+		margin:15px 0 15px 0;
+	}
+
+	.paypal{
+		display: block;
+		width: 62px;
+		height: 40px;
+		background: url(images/paypal.png) no-repeat 0 0;
+		position: absolute;
+		top: 55px;
+		right: -6px;
+		background-size: 82%;
+	}
+	.estimated-shipping-block{
+		background: #f2f2f2;
+		padding: 5px;
+		color: #666666;
+		margin-top: 20px;
+		p{
+			margin-bottom: 7px;
+			strong{
+				font-weight: bold;
+			}
+		}
+	}
+	table{
+		width:100%;
+
+		tr{
+
+			td {
+				padding:10px 0px;
+				color:$grayDark;
+				vertical-align:top;
+				font-size:11px;
+
+				&.p-image{
+					padding:10px;
+				}
+
+				&.p-p, &.price{
+					padding:10px 20px 0px 10px;
+					text-align:right;
+					font-size:12px;
+				}
+
+				&.p-sbt-t, &.p-method-name, &.p-gt-t{
+					width:60%;
+				}
+
+				.price{
+					display:block;
+					text-align:right;
+				}
+
+				.product-image{
+					border:1px solid $grayLight;
+					background:white;
+					display:block;
+					width:50px;
+				}
+
+				strong{
+					font-weight:bold;
+				}
+
+			}
+
+			&.grand-total{
+				td{
+					text-transform:uppercase;
+					padding-bottom:20px;
+				}
+			}
+		}
+
+		&.p-list{
+			tr{
+				&:nth-child(odd){
+
+					background:$p_review_tbl_row_background;
+				}
+			}
+		}
+
+		&.p-final{
+			tr{
+				&.sm{
+
+					background:$p_review_tbl_row_background;
+					@include transition(background 0.5s linear);
+					&.shine{
+						background: #FAFFBD;
+					}
+				}
+
+
+				td{
+					text-align:right;
+				}
+			}
+		}
+	}
+}
+
+// Awesomecheckout shipping and billing address step
+// --------------------------------------------------
+
+
+.form-list {
+	@include  step_padding();
+}
+.form{
+	overflow:hidden;
+
+	&.saved-address{
+		margin-bottom:10px;
+		select {
+			width:475px;
+		}
+	}
+	&.faded{
+		opacity: 0.3;
+		filter: alpha(opacity=30);
+	}
+	label {
+		margin: 0 0 7px 0;
+		display:block;
+		color:$form_label_color;
+		@include font_shorthand(14px, normal, 14px);
+
+		&.err{
+			color:$input_assist_error_color;
+			background:url("images/err.png") 0 -2px no-repeat;
+			padding-left:24px;
+		}
+
+		em{
+			color:red;
+		}
+	}
+	.login-block{
+		overflow: hidden;
+		p{
+			font-size: $base_font_size - 3;
+			display: inline;
+			span{
+				color:$grayLight;
+				display:inline;
+			}
+			a{
+				color:$grayLight;
+				text-decoration: underline;
+			}
+			&.pass{
+				a,span{
+					color: #39b54a;
+				}
+			}
+		}
+	}
+	.password-block{
+		div{
+			overflow: hidden;
+		}
+		.button{
+			@extend %button;
+			font-size:$base_font_size - 2;
+			padding:6px 12px;
+
+		}
+		p.moves{
+			padding-top: 5px;
+			a{
+				font-size: $base_font_size - 2;
+				color:$grayLight;
+				&:hover{
+					color: black;
+				}
+			}
+		}
+	}
+	.create_account{
+		padding-top: 7px;
+		padding-bottom: 10px;
+
+		label{
+			font-size: $base_font_size - 1;
+			display: inline;
+		}	
+	}
+
+	.input-box{
+		width:$input_big + 10;
+		float:left;
+		position:relative;
+	}
+	.input-text {
+		@extend %input-common;
+		@include transition(background 0.5s linear);
+
+		&.shine{
+			background: #FAFFBD;
+		}
+	}
+	select{
+		height:30px;
+		line-height:30px;
+		margin-bottom: 10px;
+		font-size: 13px;
+		vertical-align: middle;
+		border:1px solid #B6B6B6;
+		@include border_radius(4px);
+		margin-top:1px;
+		background:$white;
+		padding-top: 0px;
+		height: auto\9;
+		padding-top: 3px\9;
+		padding-bottom: 3px\9;
+	}
+	.ui-autocomplete-input{
+		@extend %input-common;
+		@include transition(background 0.5s linear);
+
+		&.shine{
+			background: #FAFFBD;
+		}
+	}
+	li {
+		overflow:hidden;
+		margin-bottom:17px;
+
+		&.border-line{
+			background:url("images/border.gif") no-repeat -37px bottom;
+			margin-bottom:20px;
+			padding-bottom:20px;
+		}
+		&.small-input{
+
+			.input-box{
+				width:$input_small + 10;
+			}
+			.input-text {
+				width:$input_small;
+			}
+		}
+		&.control {
+
+			input{
+				float:left;
+				margin:2px 10px 0 0;
+
+			}
+		}
+		&.has-account{
+			font-size: $base_font_size - 3;
+			margin-bottom:25px;
+			padding-bottom:25px;
+			background:url("images/border.gif") no-repeat -37px bottom;
+
+			a{
+				color:$gray;
+				text-decoration:underline;
+				font-size:$base_font_size - 2;
+				display:block;
+			}
+			span{
+				color:$white;
+			}
+			.input-text{
+				width:$input_medium - 8;
+				float:left;
+				margin-right:7px;
+			}
+		}
+
+		&.less-margin{
+			margin-bottom:7px;
+		}
+
+		.please-wait{
+			float:left;
+			margin-top:10px;
+		}
+	}
+	.city{
+		float:left;
+		width:$input_small + 30;
+
+		.input-text{
+			width:$input_small;
+		}
+		.input-box{
+			width:$input_small + 10;
+		}
+	}
+	.state {
+		float:left;
+		select{
+			width:147px;
+			@include transition(background 0.5s linear);
+
+			&.shine{
+				background: #FAFFBD;
+			}
+		}
+		.input-text{
+			width:$input_small + 30;
+		}
+	}
+	.sidetip{
+		float:left;
+		margin:10px 0 0 5px;
+
+		p{
+			display:none;
+			color: $input_assist_color;
+			font-size: $base_font_size - 1;
+			font-style:italic;
+
+			&.good{
+				text-indent:-999999px;
+				color:$input_assist_pass_color;
+				background:url("images/validation-tick.png") no-repeat 0 3px;
+				width: 15px;
+				height: 15px;
+			}
+
+			&.bad{
+				color:$input_assist_error_color;
+			}
+		}
+	}
+}
+.ieplaceholder{
+	display:none;
+	position:absolute;
+	z-index:999;
+	color:#d7d7d7;
+	top:5px;
+	left:5px;
+	pointer-events: none;
+}
+
+// Awesomecheckout shipping method step
+// --------------------------------------------------
+
+#checkout-shipping-method-load-wrapper{
+	@include  step_padding (13px,0px,10px,37px);
+	width:485px;
+
+	#checkout-shipping-method-totals-wrapper{
+		color: $grayLight;
+		margin-bottom: 30px;
+		span{
+			@include font_shorthand(16px, bold, 16px);
+			color: $black;
+		}
+	}
+
+	.message{
+		border:1px solid #b3b3b3;
+		margin:10px 0 20px 0;
+
+		h2{
+			height:23px;
+			text-transform:uppercase;
+			padding:5px 0 0 10px;
+			@include font_shorthand(14px, normal, 18px);
+			color:$grayDark;
+		}
+		p{
+			font-size: $base_font_size - 1;
+			padding:0px 20px 10px 10px;
+			line-height:18px;
+			color:$grayDark;
+		}
+	}
+
+	dl {
+
+		dd{
+			margin-bottom:30px;
+		}
+
+		li {
+			overflow:hidden;
+			margin-bottom:6px;
+
+			&.single-item{
+				label,span{
+					color:$orange;
+				}
+			}
+
+			&:nth-child(even){
+				background:$white;
+			}
+		}
+		h2{
+			color:$grayDark;
+			@include font_shorthand(14px, bold, 14px);
+			margin: 10px 0 0 0;
+			padding-bottom:12px;
+		}
+		label{
+			color:$grayDark;
+			@include font_shorthand(14px, normal, 14px);
+		}
+		input{
+			float:left;
+			margin:4px 10px 8px 2px;
+		}
+		span{
+			float:left;
+			margin-right: 10px;
+			margin-top:4px;
+
+			&.no-display{
+				display:none;
+			}
+
+			&.cost{
+				width:auto;
+			}
+			&.price{
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+#shipping-method-buttons-container, #shipping-buttons-container{
+	input.inactive, input.inactive:hover{
+			background-image:none;
+			background-color:#F0F0F0;
+			cursor:default;
+			box-shadow: none;
+			text-shadow: none;
+			color: #c0bebe;
+	}
+}
+// Awesomecheckout payment step
+// --------------------------------------------------
+
+.billing-information{ 
+	padding: 0 0 0 28px;
+	margin-top: -10px;
+}
+
+#customerstorecredit-container{
+	width: 450px;
+	@include  step_padding (23px, 0px, 0px, 37px);
+
+	h2{
+		@include font_shorthand(20px, bold, 20px);
+		color:$grayDark;
+		border-bottom:$border_width solid $step_header_border_color;
+		padding-bottom:12px;
+		margin-bottom:15px;
+	}
+
+	.checkout-onepage-payment-additional-customerbalance{
+		border-bottom:$border_width solid $step_header_border_color;
+		padding-bottom:15px;
+
+		label{
+			color:$black;
+		}
+	}	
+}
+
+#checkout-payment-method-load {
+	width: 450px;
+	@include  step_padding ();
+
+	h2{
+		@include font_shorthand(20px, bold, 20px);
+		color:$grayDark;
+		border-bottom:$border_width solid $step_header_border_color;
+		padding-bottom:12px;
+	}
+
+	#checkout-payment-method-load {
+		@include  step_padding ( 0px, 0px, 0px, 0px);
+	}
+	.form-list{
+		@include  step_padding ( 0px, 0px, 0px, 0px);
+	}
+
+	dd{
+		ul, ul.form-list{
+			padding-top:10px;
+
+			&.cards{
+				padding-top:0px;
+			}
+		}
+
+		&.active{
+			border-bottom:$border_width solid $step_header_border_color;
+			padding-bottom:7px;
+		}
+
+		.checkmo-list, #payment_form_authorizenet_directpost, #payment_form_paypal_standard{
+			padding:10px 0 10px 24px;
+			color:$black;
+
+			li{
+				color:$grayLight;
+			}
+
+			label{
+				color:$grayLight;
+				line-height:26px;
+			}
+			address{
+				display:inline;
+			}
+		}
+
+		.checkmo-list{
+			li{
+				color:$black;
+			}
+		}
+	}
+
+	dt {
+		overflow:hidden;
+		margin-bottom:0;
+		padding:18px 0;
+		position:relative;
+		color:$black;
+
+		.label-img{
+			position:absolute;
+			width:215px;
+			height:34px;
+			background:url('images/cards-logo.jpg');
+			display:none;
+			top:9px;
+			right:0px;
+		}
+
+		&.border{
+			border-bottom:$border_width solid $step_header_border_color;
+		}
+
+		&.active{
+			border-bottom:0px;
+			padding-bottom:5px;
+		}
+
+		&.authorizenet, &.ccsave, &.radweb_stripe{
+
+			.label-img{
+				display:block;
+			}
+		}
+
+		&.authorizenet.active, &.ccsave.active, &.radweb_stripe.active{
+			.label-img{
+				display:none;
+			}
+		}
+
+		&.cashondelivery.active, &.banktransfer.active, &.purchaseorder.active{
+			border-bottom:$border_width solid $step_header_border_color;
+			padding:18px 0;
+		}
+
+		&.purchaseorder{
+
+			#payment_form_purchaseorder{
+
+				width:auto;
+				padding:0px;
+				border:none;
+				background:none;
+				position:absolute;
+				right:0px;
+				top:6px;
+
+				input{
+					padding:7px;
+					color:#bfbfbf;
+					width:258px;
+				}
+
+				label{
+					display:none;
+				}
+			}
+		}
+		&.paypal_standard{
+
+			a{
+				color:#d82d46;
+				font-size:10px;
+				text-decoration:none;
+				position:relative;
+				top:-8px;
+			}
+		}
+
+		input {
+			float:left;
+			margin: 2px;
+			margin-right:10px;
+		}
+	}
+	#payment_form_purchaseorder,
+	.ac-cc{
+		padding:20px;
+		position:relative;
+		margin-bottom:20px;
+		background:$authorizenet_background;
+		border: 2px solid $authorizenet_border;
+		@include border_radius(3px);
+
+		.ssl-img{
+			width: 186px;
+			height: 68px;
+			background: url(images/ssl-img.png) no-repeat;
+			position: absolute;
+			right: -152px;
+			top: 65px;
+		}
+
+		li{
+			margin:0px;
+
+			&.cc-item2{
+				margin-bottom:28px;
+			}
+			&.exp-input{
+				margin-bottom:4px;
+			}
+		}
+
+	}
+	.input-text{
+		width:220px;
+	}
+	.v-fix{
+		float:left;
+		margin-bottom:10px;
+	}
+	.exp-input{
+
+		select{
+			width:104px;
+			margin-right:14px;
+		}
+
+		span{
+			position:relative;
+			left:-7px;
+		}
+	}
+	.cvv-input{
+
+		.input-text{
+			width:98px;
+		}
+	}
+	.cvv-what-is-this{
+		width:41px;
+		height:27px;
+		background:url(images/cvv-info.gif) no-repeat;
+		position:relative;
+		left:118px;
+		display:block;
+		text-indent:-99999px;
+		margin-top:4px;
+	}
+
+}
+
+.cards{
+	overflow:hidden;
+
+	li {
+		background-image:url(images/card_logos.png);
+		float:left;
+		width: 51px;
+		height:32px;
+		margin-right:5px!important;
+		text-indent:-9999px;
+		@include transition(all 0.2s);
+
+		&.VI{
+			background-position: 0 0;
+
+			&.off{
+				background-position: 0 32px;
+			}
+		}
+		&.MC{
+			background-position: 153px 0;
+
+			&.off{
+				background-position: 153px 32px;
+			}
+		}
+		&.AE{
+			background-position: 102px 0;
+
+			&.off{
+				background-position: 102px 32px;
+			}
+		}
+		&.DI{
+			background-position: 51px 0;
+			&.off{
+				background-position: 51px 32px;
+			}
+		}
+	}
+}
+
+.dflt-adrs-labl{
+	margin:40px 38px 0 38px;
+	display:block;
+	color: $black;
+	input{
+		float:left;
+		margin-right:10px;
+	}
+}
+
+// Awesomecheckout review step
+// -------------------------------------------------
+
+#checkout-review-table-wrapper{
+	min-height:288px;
+	@include  step_padding (23px, 44px, 20px, 37px);
+	overflow:hidden;
+}
+
+#checkout-review-table{
+	color: $black;
+	width:100%;
+
+	th{
+		padding:0 4px 12px 4px;
+		@include font_shorthand(14px, normal, 14px);
+		color:#5c5f66;
+
+		&.a-center{
+			text-align:center;
+		}
+	}
+
+	td{
+		padding:10px;
+		background: $white;
+		color:$grayDark;
+		@include font_shorthand(14px, normal, 14px);
+		vertical-align:top;
+
+		&.a-right{
+			text-align:right;
+		}
+
+		.item-options {
+
+			dt, dd{
+				float:left;
+				margin:5px 5px 0 0;
+			}
+		}
+
+		.product-image{
+			float:left;
+			margin-right:25px;
+			border:1px solid $grayLight;
+			background:white;
+		}
+
+		h3{
+			@include font_shorthand(14px, bold, 14px);
+		}
+	}
+
+	tbody{
+
+		.odd{
+
+			td{
+				background:$review_tbl_row_background;
+			}
+		}
+	}
+
+	tfoot{
+
+		th{
+			padding:20px 10px;
+			background:$review_tbl_row_background;
+			text-align:right;
+			font-weight: bold;
+			color: $black;
+		}
+		td{
+			padding:20px 10px;
+			text-align:right;
+			background:$review_tbl_row_background;
+			vertical-align:middle;
+			width: 80px;
+
+			&.a-right{
+				font-weight:bold;
+			}
+
+			&.last{
+				font-weight:normal;
+			}
+		}
+		tr{
+			&.first{
+
+				td{
+					background:none;
+				}
+			}
+
+			&.last{
+
+				td{
+					height:29px;
+					padding:10px;
+					text-transform: uppercase;
+					@include font_shorthand(16px, bold, 16px);
+					background:none;
+				}
+			}
+
+			th,td{
+				@include transition(background .5s);
+			}
+
+			&.shine{
+				
+				th,td{
+
+					background: #FAFFBD;
+				}
+			}
+		}
+	}
+}
+
+#promo-code{
+	padding:20px 0;
+	text-align:right;
+	font-size: $base_font_size - 2;
+
+	a{
+		text-decoration:underline;
+		color:#648399;
+	}
+}
+#discount-coupon-form-wrapper{
+	height: 65px;
+}
+.discount{
+	float:right;
+
+	h2{
+		color:$black;
+		font-weight:bold;
+	}
+	.input-text{
+		@extend %input-common;
+		width:$input_small;
+	}
+	.button{
+		position:relative;
+		top:-1px;
+		@extend %button;
+		padding:8px 12px;
+		font-size:$base_font_size - 2;
+	}
+}
+.agreements{
+	margin-top: 5px;
+	color: $black;
+	li{
+		margin-bottom: 5px;
+	}
+	img{
+		position: relative;
+		top: 2px;
+		left: 5px;
+	}
+}
+.badges-footer{
+	left: 36px;
+	position: relative;
+	margin:-78px 0 80px 0;
+	width: 300px;
+	.badge-row{
+		float:left;
+	}
+	.badge-img{
+		float:left;
+		margin: 0 5px 5px 0;
+	}
+}
+
+
+#authorizenet_centinel_logo{
+	display:none;
+}
+
+.newsletter{
+	color:$black;
+	margin-top: 10px;
+}
+
+.gift-messages{
+
+	border-top:1px solid #eeebe8;
+	padding-top:15px;
+	h3{
+		color:$black;
+	}
+
+	.control{
+		color:$black;
+		padding-top:10px;
+	}
+}
+
+.gift-messages-form{
+
+	.inner-box{
+		background: $grayLighter;
+		padding:15px;
+		color:$black;
+		margin-top:20px;
+
+		h4{
+			font-weight:bold;
+			display:none;
+		}
+
+		p {
+			padding-bottom:10px;
+
+			&.note{
+				padding:3px 0px 20px 23px;
+			}
+
+			label{
+				font-weight:bold;
+				position:relative;
+				top:1px;
+			}
+			input{
+				&:checked + label{
+					color: $orange;
+				}
+			}
+		}
+
+		.form-list{
+			padding:3px 0px 20px 23px;
+
+			p{
+				margin-bottom:10px;
+			}
+		}
+
+		.product-img-box{
+			padding:3px 0px 20px 23px;
+			overflow:hidden;
+
+			h5{
+				font-weight:bold;
+				margin-bottom:5px;
+			}
+
+			.product-image{
+				float:left;
+				margin-right:15px;
+			}
+		}
+	}
+}
+}

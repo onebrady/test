@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config>
+	<modules>
+		<AnattaDesign_AwesomeCheckout>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Core />
+				<Mage_Catalog />
+				<Mage_Checkout />
+				<Mage_Sales />
+			</depends>
+		</AnattaDesign_AwesomeCheckout>
+	</modules>
+</config>

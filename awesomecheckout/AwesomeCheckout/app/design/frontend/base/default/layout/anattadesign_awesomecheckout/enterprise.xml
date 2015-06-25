@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout>
+	<anattadesign_awesomecheckout_onepage_index>
+		<reference name="checkout.onepage.payment">
+			<block type="enterprise_customerbalance/checkout_onepage_payment_additional" template="anattadesign/awesomecheckout/onepage/payment/customerbalance.phtml" name="customerstorecredit" />
+		</reference>
+	</anattadesign_awesomecheckout_onepage_index>
+	<anattadesign_awesomecheckout_onepage_paymentmethod>
+		<reference name="root">
+			<block type="enterprise_customerbalance/checkout_onepage_payment_additional" template="anattadesign/awesomecheckout/onepage/payment/customerbalance.phtml" name="customerstorecredit" />
+		</reference>
+	</anattadesign_awesomecheckout_onepage_paymentmethod>
+</layout>

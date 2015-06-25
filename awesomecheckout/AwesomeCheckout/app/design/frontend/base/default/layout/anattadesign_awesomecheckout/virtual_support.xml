@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout>
+	<anattadesign_awesomecheckout_onepage_index ifhandle="anattadesign_awesomecheckout_virtual">
+		<remove name="checkout.onepage.billing" />
+		<remove name="checkout.onepage.shipping" />
+		<remove name="checkout.onepage.login" />
+		<remove name="checkout.onepage.login.before" />
+		<remove name="checkout.onepage.shipping_method" />
+		<reference name="checkout.onepage">
+			<block type="checkout/onepage_billing" name="checkout.onepage.virtual.billing" as="billing" template="anattadesign/awesomecheckout/onepage/virtual/billing.phtml">
+				<block type="checkout/onepage_login" name="checkout.onepage.virtual.login" as="login" template="anattadesign/awesomecheckout/onepage/login.phtml">
+					<block type="page/html_wrapper" name="checkout.onepage.virtual.login.before" as="login_before" translate="label">
+						<label>Login/Registration Before</label>
+						<action method="setMayBeInvisible">
+							<value>1</value>
+						</action>
+					</block>
+				</block>
+			</block>
+		</reference>
+		<reference name="checkout.progress">
+			<action method="setTemplate"><template>anattadesign/awesomecheckout/onepage/virtual/progress.phtml</template></action>
+		</reference>
+	</anattadesign_awesomecheckout_onepage_index>
+
+	<anattadesign_awesomecheckout_onepage_progress ifhandle="anattadesign_awesomecheckout_virtual">
+		<reference name="root">
+			<action method="setTemplate"><template>anattadesign/awesomecheckout/onepage/virtual/progress.phtml</template></action>
+		</reference>
+	</anattadesign_awesomecheckout_onepage_progress>
+
+	<anattadesign_awesomecheckout_onepage_paymentmethod ifhandle="anattadesign_awesomecheckout_virtual">
+		<remove name="checkout.onepage.billing" />
+	</anattadesign_awesomecheckout_onepage_paymentmethod>
+</layout>

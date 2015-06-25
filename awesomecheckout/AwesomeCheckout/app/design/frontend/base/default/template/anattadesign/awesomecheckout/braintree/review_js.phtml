@@ -1,0 +1,20 @@
+<?php $_model = Mage::getModel( 'braintree/paymentmethod' ); ?>
+<?php if ( $_model ) { ?>
+
+	<script type="text/javascript">
+		var _super;
+
+		if (typeof _super === 'undefined' && typeof _super !== 'function')
+			_super = Review.prototype.save;
+
+		Review.prototype.save = function() {
+			if (payment.currentMethod === 'braintree') {
+				braintree = Braintree.create('<?php echo $_model->getConfigData( 'client_side_encryption_key' ); ?>');
+				braintree.encryptForm(payment.form);
+			}
+
+			return _super.call(this); // call AwesomeCheckout's Review.save() now
+		};
+	</script>
+
+<?php }
