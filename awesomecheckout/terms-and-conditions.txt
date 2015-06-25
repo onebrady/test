@@ -1,0 +1,43 @@
+Extension Support Policy
+
+Anatta Design, Inc. offers 60 days of support from the purchase date for every extension legally purchased from ANATTA DESIGN INC. Support team shall provide to Customer, without any additional charge, all reasonably necessary written consultation requested, in connection with use and operation of an Anatta extension or any problems therewith, within the above-stated period of time.
+
+Anatta Design, Inc. will only provide support to stores/individuals/businesses who lawfully purchase a license for the Software. If Anatta Design, Inc cannot find a purchase ID for the Software, Anatta Design will not provide any level of support and the store/individual/business will be asked to delete their copy of the Software immediately. If the Software is not deleted and is still being used without a lawfully purchased license, Anatta Design, Inc has the right for legal prosecution of the store/individual/business.
+
+The Anatta Support team reserves the right to ignore any appeals or requests that do no comply with the present conditions.
+
+Extension Version Policy
+
+Anatta Design, Inc. will only provide support and issue refunds for versions of the License purchased by the store/individual/business. Anatta Design will not provide support for a version of the extension that does not match that purchased by the store/individual/business. 
+
+Extension Upgrade Policy
+
+Anatta Design, Inc will provide FREE upgrades of their extension for every minor upgrade of the extension. Minor upgrades will be clearly marked as a minor upgrade when the version number increases by increments of .0.1. Example of a minor upgrade is from v1.0.1 to v.1.0.2 or v.1.0.5. 
+
+Anatta Design, Inc will not provide free upgrades of their extension for major upgrades. Major upgrades will be clearly marked as a major upgrade when the version number increase by .1. Example of a major upgrade is from v1.0 to v1.1 or v1.3. 
+
+Major upgrades will be offered at an upgrade fee and must be purchased by the store/individual/businesses at a fee. 
+
+Product Bug-fixing
+
+Customer is entitled to report any bugs experienced while using an Anatta Design extension. Bugs reported within a period of 60 days from the Anatta extension purchase date shall be fixed at the earliest possible date and be available for installation by all Customers who can show a proof of purchase for the original extension. Anatta Design Inc. is accountable to promptly inform all Customers who hold we have proof of purchase about availability of the fixed version of the ANATTA DESIGN extension.
+
+It is solely Customer's obligation to obtain and install the new corrected ANATTA DESIGN extension after being notified.
+
+Refunds
+
+Customer may demand a refund for any ANATTA DESIGN extension within a 30-day period from the date of purchase. Any clarification of Customer's refund claim within the 30-days period is optional.
+
+ANATTA DESIGN Inc. will check the compliance of all License information before resolving money refund issue.
+
+ANATTA DESIGN Inc. reserves the right to deny money refund claimed within the stated period if Customer's License info is incomplete and/or incorrect. Refund requests submitted after the expiration of the 30 days period shall not be accepted. Refunds of money charged for custom installation service shall not be issued.
+
+Confidentiality
+
+Each party agrees that it shall not disclose to any third party any information concerning the customers, trade secrets, methods, processes or procedures or any other confidential, financial or business information of the other party which it learns during the course of its performance of this Agreement without the prior written consent of such other party. This obligation shall survive the cancellation or other termination of this Agreement or License.
+
+ANATTA DESIGN extensions contain trade secrets and proprietary know-how that belong to ANATTA DESIGN Inc. and it is being made available to Licensee in strict confidence.
+
+We advise that you download the full version of our Magento Extensions License Agreement in PDF format.
+
+If you have any questions concerning ANATTA DESIGN Inc. products or services, please do not hesitate to contact us at: support@anattadesign.com

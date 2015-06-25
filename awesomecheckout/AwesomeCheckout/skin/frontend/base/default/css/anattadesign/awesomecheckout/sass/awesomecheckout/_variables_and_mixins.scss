@@ -1,0 +1,158 @@
+// AwesomeCheckout Global Variables
+// --------------------------------------------------
+
+
+// Base Color
+// -------------------------
+
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #666 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
+$orange:                #ea830d !default;
+
+
+// Default Theme
+// ---------------------------------------------------
+
+$fixed_width:                     962px;
+$fluidwidth:                      auto;
+$left_col_width:                  650px;
+$right_col_width:                 312px;
+$col-gap:                         12px;
+$border_width:                    1px;
+$body_background:                 #f2f2f2;
+$left_col_background:             $white;
+$left_col_border_color:           #baafa0;
+$right_col_background:            $white;
+$right_col_border_color:          #baafa0;
+$text_color:                      #666;
+$step_heading_color:              $black;
+$step_header_border_color:        #eeebe8;
+$step_number_background:          #f88c11;
+$step_number_border:              #f05039;
+$step_number_text_color:          $white;
+$announcement_color:              $white;
+$announcement_background:         #648399;
+$shipping_provider_tbl_bg:        #dfe5e8;
+$authorizenet_background:         #e6e6e6;
+$authorizenet_border:             $grayLight;
+$review_tbl_row_background:       #f2f2f2;
+$p_review_tbl_row_background:     #ededed;
+$edit_btn_background:             #648399;
+$btn_start_color:                 #ea830d;
+$btn_end_color:                   #ea830d;
+$btn_start_color_hover:           #ea830d;
+$btn_end_color_hover:             #ea830d;
+$mob_nav_border:                  #dddedf;
+$mob_nav_bg_start:                #fdfdfd;
+$mob_nav_bg_end:                  #e0e1e2;
+$mob_nav_color:                   #6d6e70;
+$mob_nav_color_active:            $white;
+$mob_nav_bg_start_active:         #5b5c5e;
+$mob_nav_bg_end_active:           #909295;
+$badges_footer_top:               #3c3839;
+$badges_footer_bottom:        #757273;
+
+
+
+
+
+
+// Forms
+// -------------------------
+
+$place_holder_test:               red;
+$input_background:                $white;
+$input_border:                    #B6B6B6;
+$input_color:                     $black;
+$form_label_color:                $black;
+$input_big:                       272px;
+$input_medium:                    200px;
+$input_small:                     104px;
+$input_mobile:                    95%;
+$input_assist_color:              $gray;
+$input_assist_pass_color:         green;
+$input_assist_error_color:        red;
+
+
+// Typography
+// -------------------------
+$base_font_family:    Arial, sans-serif;
+$base_font_size:      14px;
+$base_mobile_size:      13px;
+
+
+// Placeholder text
+// -------------------------
+
+@mixin placeholder($color: $place_holder_test) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+
+@mixin font_shorthand($size: $base_font_size, $weight: normal, $lineHeight: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+// Border Radius
+@mixin border_radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Drop shadows
+@mixin box_shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin btn_gradient($startColor: #555, $endColor: #333) {
+  background-color: mix($startColor, $endColor, 60%);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor); // FF 3.6+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
+  background-image: linear-gradient(to bottom, $startColor, $endColor); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}', GradientType=0); // IE9 and down
+}
+
+@mixin button($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 2px 0 rgba(0,0,0,.25)) {
+  color: $textColor;
+  text-shadow: $textShadow;
+  @include btn_gradient($primaryColor, $secondaryColor);
+  border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
+  border:none;
+}
+
+@mixin step_padding($top: 23px, $right: 0px , $bottom: 10px, $left: 37px ){
+	padding: $top $right $bottom $left;
+}
+
+
+
