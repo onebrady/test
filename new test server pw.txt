@@ -3,6 +3,7 @@ VY3Wv4qdPbGg
 this
 
 
+<<<<<<< HEAD
 some shits
 tdtttaaa
 
@@ -13,3 +14,14 @@ added local master
 one more addition
 
 added from remote on master
+=======
+some shitsss
+tdttt
+
+
+added to remote only
+
+second branch local
+
+
+>>>>>>> origin/second_branch
