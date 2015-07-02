@@ -6,4 +6,6 @@ this
 some shitsss
 tdttt
 
-added to second branch
+
+added to remote only
+
